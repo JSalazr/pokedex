@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
+import PokemonContext from "../../../../context/pokemonContext";
+import Card from "../card";
 
-const Pokemon = ({ dataUrl }) => {
+const PokemonListItem = ({ dataUrl }) => {
   const [pokemonData, setPokemonData] = useState({});
 
   useEffect(() => {
     axios
       .get(dataUrl)
-      .then((response) => setPokemonData(response))
+      .then((response) => setPokemonData(response.data))
       .catch((error) => console.log(error));
   });
+
   return (
     <Grid item xs={12} md={6} lg={4}>
-      <Paper>
-        <p>{pokemonData.name}</p>
-      </Paper>
+      <PokemonContext.Provider value={pokemonData}>
+        <Card />
+      </PokemonContext.Provider>
     </Grid>
   );
 };
 
-export default Pokemon;
+export default PokemonListItem;

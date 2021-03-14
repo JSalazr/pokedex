@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
-import PokemonCard from "./components/pokemonCard";
+import PokemonListItem from "./components/pokemonListItem";
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -22,8 +22,8 @@ const PokemonList = () => {
     <Grid item xs={12}>
       <Paper>
         <Grid container>
-          {pokemonList.map((pokemon) => (
-            <PokemonCard dataUrl={pokemon.url} />
+          {pokemonList.map((pokemon, key) => (
+            <PokemonListItem dataUrl={pokemon.url} key={key}/>
           ))}
         </Grid>
       </Paper>
