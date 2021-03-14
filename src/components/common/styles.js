@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
@@ -13,6 +13,16 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  card: {
+    border: "3px solid",
+    borderRadius: "4px"
+  }
 }));
 
-export default useStyles;
+export const typeStyles = (bgColor, borderColor) => makeStyles((theme) => ({
+  typeTemplate:{
+    backgroundColor: bgColor,
+    borderColor: borderColor
+  }
+}));
+

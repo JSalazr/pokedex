@@ -7,17 +7,17 @@ const Navbar = () => {
   const classes = useStyles();
   return (
     <AppBar position="absolute" className={classes.appBar}>
-        <Typography
-          component="h1"
-          variant="h6"
-          color="inherit"
-          noWrap
-          className={classes.title}
-        >
-          Dashboard
-        </Typography>
-      </AppBar>
+      <Typography
+        component="h1"
+        variant="h6"
+        color="inherit"
+        noWrap
+        className={classes.title}
+      >
+        Dashboard
+      </Typography>
+    </AppBar>
   );
-}
+};
 
 export default Navbar;

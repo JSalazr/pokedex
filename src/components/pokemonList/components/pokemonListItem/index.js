@@ -12,7 +12,7 @@ const PokemonListItem = ({ dataUrl }) => {
       .get(dataUrl)
       .then((response) => setPokemonData(response.data))
       .catch((error) => console.log(error));
-  });
+  }, [dataUrl]);
 
   return (
     <Grid item xs={12} md={6} lg={4}>
